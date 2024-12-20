@@ -1,5 +1,5 @@
 dataset_type = 'AITODDataset'
-data_root = 'data/AI-TOD/'
+data_root = '/media/meysam/ssd1/AI-TOD/aitod/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -33,16 +33,16 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/small_trainval_v1_1.0.json',
-        img_prefix=data_root + 'trainval/',
+        img_prefix=data_root + 'images/trainval/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/small_test_v1_1.0.json',
-        img_prefix=data_root + 'test/',
+        img_prefix=data_root + 'images/test/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/small_test_v1_1.0.json',
-        img_prefix=data_root + 'test/',
+        img_prefix=data_root + 'images/test/',
         pipeline=test_pipeline))
 evaluation = dict(interval=12, metric='bbox')
